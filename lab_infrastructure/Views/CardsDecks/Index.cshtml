@@ -1,0 +1,156 @@
+﻿@model IEnumerable<lab_domain.Model.CardsDeck>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="layout">
+    <div class="contacts">
+        <h2>Contact Us</h2>
+        <p>Email: info@cardsdeckshop.com</p>
+        <p>Phone: +(380)97-997-97-79</p>
+    </div>
+
+    <div class="cards-column">
+        <h1>CardsDeckShop</h1>
+        <p><a asp-action="Create" class="btn btn-addnewdeck">Add new deck</a></p>
+
+        <div class="cards-container">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img src="@item.ImageUrl" alt="@item.Name" class="card-image" />
+                    <div class="card-content">
+                        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                        <p><strong>Price:</strong> @Html.DisplayFor(modelItem => item.Price)</p>
+                        <p><strong>Stock:</strong> @Html.DisplayFor(modelItem => item.Stock)</p>
+                        <p><strong>Rating:</strong> @Html.DisplayFor(modelItem => item.Rating)</p>
+                        <p><strong>Brand:</strong> @Html.DisplayFor(modelItem => item.Brand.Name)</p>
+
+                        @if (item.Discounts != null && item.Discounts.Count > 0)
+                        {
+                            <p>
+                                <strong>Discounts:</strong>
+                                @foreach (var discount in item.Discounts)
+                                {
+                                    <span class="discount">@discount.DiscountPercentage% (valid from @discount.StartDate to @discount.EndDate)</span>
+                                }
+                            </p>
+                        }
+
+                        @if (item.CardTags != null && item.CardTags.Count > 0)
+                        {
+                            <p>
+                                <strong>Tags:</strong>
+                                @foreach (var tag in item.CardTags)
+                                {
+                                    <span class="tag">@tag.Tag</span>
+                                }
+                            </p>
+                        }
+
+                        @if (item.Promotions != null && item.Promotions.Count > 0)
+                        {
+                            <p>
+                                <strong>Promotions:</strong>
+                                @foreach (var promo in item.Promotions)
+                                {
+                                    <span class="promo">@promo.PromoName</span>
+                                }
+                            </p>
+                        }
+                    </div>
+
+                    <div class="card-actions">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-editdeck">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-detailsdeck">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-deletedeck">Delete</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .layout {
+        display: flex;
+        gap: 20px;
+    }
+
+    .contacts {
+        width: 350px;
+        position: fixed;
+        top: 180px;
+        left: 20px;
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 25px;
+    }
+
+    .cards-column {
+        margin-left: 280px;
+        flex-grow: 1;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: left;
+    }
+
+    .card {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: calc(25% - 20px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .card-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-content {
+        padding: 15px;
+        flex-grow: 1; 
+    }
+
+    .card-actions {
+        margin-top: 10px; 
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+
+    .tag, .promo, .discount {
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        padding: 3px 8px;
+        margin-right: 5px;
+        font-size: 0.9em;
+        display: inline-block;
+    }
+
+    .btn-addnewdeck {
+        background-color: #28a745;
+    }
+
+    .btn-editdeck {
+        background-color: #007bff;
+    }
+
+    .btn-detailsdeck {
+        background-color: #17a2b8;
+    }
+
+    .btn-deletedeck {
+        background-color: #dc3545;
+    }
+</style>

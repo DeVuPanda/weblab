@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\web_lab\\web_lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\cardsdecks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\cardsdecks\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\cardsdecks\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
+              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
+              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
+              "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T19:38:22.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
+              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
+              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
+              "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T19:37:55.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
+              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
+              "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwAsAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T19:24:55.6Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
