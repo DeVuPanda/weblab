@@ -23,9 +23,22 @@ namespace lab_infrastructure.Controllers
 
         // GET: api/PromotionsApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotions()
+        public async Task<ActionResult> GetPromotions([FromQuery] int skip = 0, [FromQuery] int limit = 2)
         {
-            return await _context.Promotions.ToListAsync();
+            var totalCount = await _context.Promotions.CountAsync();
+
+            var promotions = await _context.Promotions
+                .Skip(skip)
+                .Take(limit)
+                .ToListAsync();
+
+            string nextLink = null;
+            if (skip + limit < totalCount)
+            {
+                nextLink = Url.Action("GetPromotions", new { skip = skip + limit, limit });
+            }
+
+            return Ok(new { Items = promotions, NextLink = nextLink });
         }
 
         // GET: api/PromotionsApi/5

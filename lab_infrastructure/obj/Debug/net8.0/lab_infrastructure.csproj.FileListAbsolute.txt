@@ -557,3 +557,4 @@ C:\Projects\web_lab\web_lab\lab_infrastructure\bin\Debug\net8.0\Microsoft.Extens
 C:\Projects\web_lab\web_lab\lab_infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Projects\web_lab\web_lab\lab_infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Projects\web_lab\web_lab\lab_infrastructure\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Projects\web_lab\web_lab\lab_infrastructure\obj\Debug\net8.0\lab_infrastructure.sourcelink.json

@@ -4,6 +4,78 @@
     ViewData["Title"] = "Index";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        .search-container {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .ui-autocomplete {
+            max-height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1000;
+        }
+
+        .autocomplete-item {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .deck-thumbnail {
+            width: 50px;
+            height: 70px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .deck-info {
+            flex-grow: 1;
+        }
+
+        .deck-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .deck-brand {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .deck-price {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .no-results {
+            background-color: #f8f9fa;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .no-results-message {
+            color: #6c757d;
+            font-style: italic;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+}
+
 <div class="layout">
     <div class="contacts">
         <h2>Contact Us</h2>
@@ -13,6 +85,11 @@
 
     <div class="cards-column">
         <h1>CardsDeckShop</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for cards..." />
+        </div>
+
         <p><a asp-action="Create" class="btn btn-addnewdeck">Add new deck</a></p>
 
         <div class="cards-container">
@@ -154,3 +231,81 @@
         background-color: #dc3545;
     }
 </style>
+
+@section Scripts {
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let noResultsTimeout;
+
+            $("#searchInput").autocomplete({
+                source: function (request, response) {
+                    if (noResultsTimeout) {
+                        clearTimeout(noResultsTimeout);
+                    }
+
+                    $.ajax({
+                        url: '@Url.Action("Search", "CardsDecks")',
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            if (data.length === 0 && request.term.length >= 3) {
+                                noResultsTimeout = setTimeout(function () {
+                                    var noResultsItem = {
+                                        label: 'No results found',
+                                        value: request.term,
+                                        isNoResults: true
+                                    };
+                                    response([noResultsItem]);
+                                }, 1000);
+
+                                response([]);
+                            } else {
+                                response(data);
+                            }
+                        }
+                    });
+                },
+                minLength: 3,
+                delay: 300,
+                select: function (event, ui) {
+                    if (ui.item.isNoResults) {
+                        event.preventDefault();
+                        return;
+                    }
+                    window.location.href = '@Url.Action("Details", "CardsDecks")/' + ui.item.id;
+                }
+            }).autocomplete("instance")._renderItem = function (ul, item) {
+                if (item.isNoResults) {
+                    return $("<li>")
+                        .append(`<div class='autocomplete-item no-results'>
+                                            <div class='no-results-message'>
+                                                No matches found for "${item.value}"
+                                            </div>
+                                        </div>`)
+                        .appendTo(ul);
+                }
+
+                return $("<li>")
+                    .append(`<div class='autocomplete-item'>
+                                        <img src='${item.imageUrl}' class='deck-thumbnail' />
+                                        <div class='deck-info'>
+                                            <div class='deck-name'>${item.name}</div>
+                                            <div class='deck-brand'>${item.brand}</div>
+                                            <div class='deck-price'>$${item.price}</div>
+                                            <div>In Stock: ${item.stock}</div>
+                                        </div>
+                                    </div>`)
+                    .appendTo(ul);
+            };
+
+            $("#searchInput").on('input', function () {
+                if (noResultsTimeout) {
+                    clearTimeout(noResultsTimeout);
+                }
+            });
+        });
+    </script>
+}

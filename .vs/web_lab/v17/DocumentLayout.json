@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\cardsdecks\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\views\\cardsdecks\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\views\\cardsdecks\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|c:\\projects\\web_lab\\web_lab\\lab_infrastructure\\controllers\\cardsdeckscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C0E45-CA01-405D-8E51-8D811145F1CB}|lab_infrastructure\\lab_infrastructure.csproj|solutionrelative:lab_infrastructure\\controllers\\cardsdeckscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,26 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
-              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
-              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
-              "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Create.cshtml",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAEcAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-16T19:38:22.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
-              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
-              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
-              "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-16T19:37:55.179Z"
+              "Title": "CardsDecksController.cs",
+              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Controllers\\CardsDecksController.cs",
+              "RelativeDocumentMoniker": "lab_infrastructure\\Controllers\\CardsDecksController.cs",
+              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Controllers\\CardsDecksController.cs",
+              "RelativeToolTip": "lab_infrastructure\\Controllers\\CardsDecksController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAkwCkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T11:51:39.683Z"
             },
             {
               "$type": "Document",
@@ -64,9 +52,22 @@
               "RelativeDocumentMoniker": "lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
               "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
               "RelativeToolTip": "lab_infrastructure\\Views\\CardsDecks\\Index.cshtml",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAqwAsAAAAKAAAA",
+              "ViewState": "AQIAAOEAAAAAAAAAAAAAAEYAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-16T19:24:55.6Z",
+              "WhenOpened": "2024-10-30T11:51:02.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "lab_infrastructure\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Projects\\web_lab\\web_lab\\lab_infrastructure\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "lab_infrastructure\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAwAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T09:23:08.373Z",
               "EditorCaption": ""
             }
           ]

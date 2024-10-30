@@ -23,9 +23,22 @@ namespace lab_infrastructure.Controllers
 
         // GET: api/BrandsApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Brand>>> GetBrands()
+        public async Task<ActionResult> GetBrands([FromQuery] int skip = 0, [FromQuery] int limit = 2)
         {
-            return await _context.Brands.ToListAsync();
+            var totalCount = await _context.Brands.CountAsync();
+
+            var brands = await _context.Brands
+                .Skip(skip)
+                .Take(limit)
+                .ToListAsync();
+
+            string nextLink = null;
+            if (skip + limit < totalCount)
+            {
+                nextLink = Url.Action("GetBrands", new { skip = skip + limit, limit });
+            }
+
+            return Ok(new { Items = brands, NextLink = nextLink });
         }
 
         // GET: api/BrandsApi/5

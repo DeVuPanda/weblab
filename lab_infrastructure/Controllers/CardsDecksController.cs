@@ -19,6 +19,35 @@ namespace lab_infrastructure.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<JsonResult> Search(string term)
+        {
+            if (string.IsNullOrEmpty(term) || term.Length < 3)
+                return Json(new List<object>());
+
+            var searchResults = await _context.CardsDecks
+                .Include(c => c.Brand)
+                .Include(c => c.CardTags)
+                .Where(c => c.Name.Contains(term) ||
+                            c.Brand.Name.Contains(term) ||
+                            c.CardTags.Any(t => t.Tag.Contains(term)))
+                .Take(10)
+                .Select(c => new
+                {
+                    id = c.Id,
+                    name = c.Name,
+                    brand = c.Brand.Name,
+                    price = c.Price,
+                    imageUrl = c.ImageUrl,
+                    stock = c.Stock,
+                    label = c.Name, 
+                    value = c.Name  
+                })
+                .ToListAsync();
+
+            return Json(searchResults);
+        }
+
         // GET: CardsDecks
         public async Task<IActionResult> Index()
         {

@@ -23,9 +23,22 @@ namespace lab_infrastructure.Controllers
 
         // GET: api/CardsDecksApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CardsDeck>>> GetCardsDecks()
+        public async Task<ActionResult> GetCardsDecks([FromQuery] int skip = 0, [FromQuery] int limit = 4)
         {
-            return await _context.CardsDecks.ToListAsync();
+            var totalCount = await _context.CardsDecks.CountAsync();
+
+            var cardsDecks = await _context.CardsDecks
+                .Skip(skip)
+                .Take(limit)
+                .ToListAsync();
+
+            string nextLink = null;
+            if (skip + limit < totalCount)
+            {
+                nextLink = Url.Action("GetCardsDecks", new { skip = skip + limit, limit });
+            }
+
+            return Ok(new { Items = cardsDecks, NextLink = nextLink });
         }
 
         // GET: api/CardsDecksApi/5

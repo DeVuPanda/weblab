@@ -23,9 +23,22 @@ namespace lab_infrastructure.Controllers
 
         // GET: api/CardTagsApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CardTag>>> GetCardTags()
+        public async Task<ActionResult> GetCardTags([FromQuery] int skip = 0, [FromQuery] int limit = 2)
         {
-            return await _context.CardTags.ToListAsync();
+            var totalCount = await _context.CardTags.CountAsync();
+
+            var cardTags = await _context.CardTags
+                .Skip(skip)
+                .Take(limit)
+                .ToListAsync();
+
+            string nextLink = null;
+            if (skip + limit < totalCount)
+            {
+                nextLink = Url.Action("GetCardTags", new { skip = skip + limit, limit });
+            }
+
+            return Ok(new { Items = cardTags, NextLink = nextLink });
         }
 
         // GET: api/CardTagsApi/5
